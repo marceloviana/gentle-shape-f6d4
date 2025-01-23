@@ -18,7 +18,7 @@ jobs:
           path: "requirements.txt"
       
       - name: Generate artifacts to test
-        run: mkdir dist && cat > dist/artifacts.test
+        run: mkdir dist && rsync -aP dist/
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
@@ -35,6 +35,9 @@ jobs:
         with:
           name: build-artifacts
           path: dist/
+      
+      - name: Retrive artifacts
+        run: ls -ls
 
       - name: Deploy to Cloudflare Workers
         env:
