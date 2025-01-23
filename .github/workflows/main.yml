@@ -17,4 +17,4 @@ jobs:
         with:
           apiToken: "APRvK1xnqkInAustRenZ8umsMUnycpn9s3hsI10V"
           accountId: "04bbb7e0b5ef171609909c677047c263"
-          command: wrangler deploy src/entry.py
+          command: wrangler deploy
