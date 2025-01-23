@@ -6,7 +6,7 @@ compatibility_flags = ["python_workers"]
 compatibility_date = "2024-12-30"
 
 [env.production]
-name = "Production site"
+name = "production site"
 route = "https://example.com/docs*"
 
 [env.staging]
