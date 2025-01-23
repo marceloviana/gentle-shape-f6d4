@@ -37,11 +37,12 @@ jobs:
           path: dist/
       
       - name: Retrive artifacts
-        run: ls -ls
+        run: ls -ls dist/
 
       - name: Deploy to Cloudflare Workers
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
+          cd dist
           npm install -g wrangler
-          wrangler dev --env production
+          wrangler deploy --env production
