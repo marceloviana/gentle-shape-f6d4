@@ -7,7 +7,7 @@ on:
       - develop
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,36 @@ jobs:
       # Install Wrangler
       - name: Install Wrangler
         run: npm install -g wrangler
+
+      # Authenticate Wrangler with Cloudflare
+      - name: Authenticate with Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: wrangler whoami
+
+      # Publish the worker
+      - name: Publish Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: wrangler deploy --env production
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # # Set up Node.js environment
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16
+
+      # # Install Wrangler
+      # - name: Install Wrangler
+      #   run: npm install -g wrangler
 
       # Authenticate Wrangler with Cloudflare
       - name: Authenticate with Cloudflare
