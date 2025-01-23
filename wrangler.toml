@@ -1,12 +1,18 @@
-name = "docs-site-blah"
+name = "gentle-shape-f6d4"
 
-[site]
-bucket = "./public"
+main = "./src/index.py"
+compatibility_flags = ["python_workers"]
+
+compatibility_date = "2024-12-30"
 
 [env.production]
 name = "docs-site"
 route = "https://example.com/docs*"
 
 [env.staging]
+name = "docs-site-staging"
+route = "https://staging.example.com/docs*"
+
+[env.dev]
 name = "docs-site-staging"
 route = "https://staging.example.com/docs*"
