@@ -16,12 +16,15 @@ jobs:
         uses: py-actions/py-dependency-install@v4
         with:
           path: "requirements.txt"
+      
+      - name: Generate artifacts to test
+        run: mkdir dist && cat > dist/artifacts.test
 
-      - uses: actions/upload-artifact@v4
-        name: Upload Build Artifacts
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: dist/**/*
+          path: dist/
 
   deploy:
     runs-on: ubuntu-latest
