@@ -7,4 +7,4 @@ async def on_fetch(request, env):
     for e in teste:
         a.append(f"{e}--xxx")
 
-    return Response.new(f" sucesso! {a} {env.name} ")
+    return Response.new(f" sucesso! {a} {env.API_HOST} ")

@@ -1,18 +1,20 @@
 name = "gentle-shape-f6d4"
-
 main = "./src/index.py"
 compatibility_flags = ["python_workers"]
-
 compatibility_date = "2024-12-30"
+
 
 [env.production]
 name = "production-site"
-route = "https://example.com/docs*"
+route = "https://production-site.marcelovianademaria.workers.dev/"
+vars = { API_HOST = "https://marcelovianademaria.workers.dev/?prod" }
 
 [env.staging]
-name = "Staging site"
-route = "https://staging.example.com/docs*"
+name = "staging-site"
+route = "https://staging-site.marcelovianademaria.workers.dev/"
+vars = { API_HOST = "https://marcelovianademaria.workers.dev/?staging" }
 
 [env.dev]
-name = "Development site"
-route = "https://staging.example.com/docs*"
+name = "dev-site"
+route = "https://dev-site.marcelovianademaria.workers.dev/"
+vars = { API_HOST = "https://marcelovianademaria.workers.dev/?dev" }
