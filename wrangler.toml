@@ -6,15 +6,15 @@ compatibility_date = "2024-12-30"
 
 [env.production]
 name = "production-site"
-route = "https://production-site.marcelovianademaria.workers.dev/"
-vars = { API_HOST = "https://marcelovianademaria.workers.dev/?prod" }
+route = "https://production-site.infsite.org/"
+vars = { API_HOST = "https://infsite.org/?prod" }
 
 [env.staging]
 name = "staging-site"
-route = "https://staging-site.marcelovianademaria.workers.dev/"
-vars = { API_HOST = "https://marcelovianademaria.workers.dev/?staging" }
+route = "https://staging-site.infsite.org/"
+vars = { API_HOST = "https://infsite.org/?staging" }
 
 [env.dev]
 name = "dev-site"
-route = "https://dev-site.marcelovianademaria.workers.dev/"
-vars = { API_HOST = "https://marcelovianademaria.workers.dev/?dev" }
+route = "https://dev-site.infsite.org/"
+vars = { API_HOST = "https://infsite.org/?dev" }
